@@ -8,6 +8,6 @@ namespace Agenda.Interface.IAuthRepository
         Task<AuthResponse> LoginAsync(LoginRequest request);
         Task<UsuarioResponse> RegisterClienteAsync(RegisterClienteRequest request);
         Task<UsuarioResponse> RegisterProfissionalAsync(RegisterRequest request);
-        //Task<bool> RegisterAsync(RegisterClienteRequest request);
+        Task<UsuarioResponse> RegisterAdminEmpresa(RegisterRequest request);
     }
 }

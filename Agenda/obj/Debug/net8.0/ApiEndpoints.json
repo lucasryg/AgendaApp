@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Agenda.Controllers.AuthController",
+    "Method": "RegisterAdminEmpresa",
+    "RelativePath": "api/Auth/register-admin-empresa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Agenda.Dto.Request.AuthRequest.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Agenda.Controllers.AuthController",
     "Method": "RegisterCliente",
     "RelativePath": "api/Auth/register-cliente",
     "HttpMethod": "POST",

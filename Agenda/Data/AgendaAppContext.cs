@@ -34,9 +34,12 @@ public partial class AgendaAppContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-81POI2L\\MSSQLSERVER1;Database=AgendaApp;Trusted_Connection=True;TrustServerCertificate=True;");
+    public virtual DbSet<AdminEmpresa> AdminEmpresa { get; set; }
+
+
+//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+//        => optionsBuilder.UseSqlServer("Server=DESKTOP-81POI2L\\MSSQLSERVER1;Database=AgendaApp;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -217,6 +220,22 @@ public partial class AgendaAppContext : DbContext
                 .HasForeignKey(d => d.EmpresaId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Usuario__Empresa__3B75D760");
+        });
+
+        modelBuilder.Entity<AdminEmpresa>(entity =>
+        {
+            entity.HasKey(e => e.AdminEmpresaId).HasName("PK__AdminEmp__907C0E81544ADEF8");
+
+            entity.ToTable("AdminEmpresa");
+
+            entity.HasIndex(e => e.EmpresaId, "UQ_AdminPorEmpresa").IsUnique();
+
+            entity.Property(e => e.Nome)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.Telefone)
+                .HasMaxLength(20)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

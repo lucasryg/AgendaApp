@@ -22,7 +22,7 @@ namespace Agenda.Repository
 
         public async Task<AuthResponse> LoginAsync(LoginRequest request)
         {
-            var usuario = await _context.Usuarios
+                var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(x => x.Email == request.Email);
 
             if (usuario == null || !PasswordHelper.VerifyPassword(request.Senha, usuario.SenhaHash))
@@ -41,54 +41,46 @@ namespace Agenda.Repository
             };
         }
 
-        //public async Task<bool> RegisterAsync(RegisterClienteRequest request)
-        //{
-          
-        //    // Verifica se já existe email
-        //    if (await _context.Usuarios.AnyAsync(u => u.Email == request.Email))
-        //        return false ;
+        public async Task<UsuarioResponse> RegisterAdminEmpresa(RegisterRequest request)
+        {
 
-        //    // Criptografa senha
-        //    var senhaHash = PasswordHelper.HashPassword(request.Senha);
+            if (await _context.Usuarios.AnyAsync(u => u.Email == request.Email))
+                return null;
 
-        //    var usuario = new Usuario
-        //    {
-        //        Email = request.Email,
-        //        SenhaHash = senhaHash,
-              
-        //    };
+            var usuario = new Usuario
+            {
+                Email = request.Email,
+                SenhaHash = PasswordHelper.HashPassword(request.Senha),
+                Role= "AdminEmpresa",
+                EmpresaId = 1
+            };
 
-        //    _context.Usuarios.Add(usuario);
-        //    await _context.SaveChangesAsync();
+            _context.Usuarios.Add(usuario);
+            await _context.SaveChangesAsync();
 
-        //    // Dependendo da role, cria nas tabelas específicas
-        
-        //        var cliente = new Cliente
-        //        {
-        //            Nome = request.Nome,
-        //            Telefone = request.Telefone,
-        //            UsuarioId = usuario.UsuarioId
-        //        };
-        //        _context.Clientes.Add(cliente);
-         
-        //        var profissional = new Profissional
-        //        {
-        //            Nome = request.Nome,
-        //            Telefone = request.Telefone,
-        //            ImgPerfil = request.ImgPerfil ?? "",
-        //            UsuarioId = usuario.UsuarioId
-        //        };
-        //        _context.Profissionals.Add(profissional);
-            
+            var adminEmpresa = new AdminEmpresa
+            {
+                Nome = request.Nome,
+                Telefone = request.Telefone,
+                UsuarioId = usuario.UsuarioId,
+                EmpresaId = usuario.EmpresaId
+            };
+            _context.AdminEmpresa.Add(adminEmpresa);
+            await _context.SaveChangesAsync();
 
-        //    await _context.SaveChangesAsync();
-        //    return true;
-        //}
+            return new UsuarioResponse
+            {
+                Nome = adminEmpresa.Nome,
+                Email = usuario.Email
+            };
+        }
 
         public async Task<UsuarioResponse> RegisterClienteAsync(RegisterClienteRequest request)
         {
+
             if (await _context.Usuarios.AnyAsync(x => x.Email == request.Email))
                 return null;
+
 
             var usuario = new Usuario
             {
@@ -113,7 +105,7 @@ namespace Agenda.Repository
 
             return new UsuarioResponse
             {
-                //Nome = cliente.Nome,
+                Nome = cliente.Nome,
                 Email = usuario.Email
             };
         }
@@ -152,8 +144,5 @@ namespace Agenda.Repository
                 Email = usuario.Email,
             };
         }
-
-
     }
 }
-

@@ -20,18 +20,7 @@ namespace Agenda.Controllers
         {
             _authRepository = authRepository;
         }
-
-        //[HttpPost("login")]
-        //public async Task<IActionResult> Login([FromBody] UsuarioDto Input)
-        //{
-        //    var token = await _authRepo.LoginAsync(Input.Email, Input.SenhaHash);
-
-        //    if (token == null)
-        //        return Unauthorized("Email ou senha inválidos");
-
-        //    return Ok(new { Token = token });
-        //}
-
+ 
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginRequest request)
         {
@@ -42,7 +31,7 @@ namespace Agenda.Controllers
             return Ok(result);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, AdminEmpresa")]
         [HttpPost("register-profissional")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
@@ -57,6 +46,17 @@ namespace Agenda.Controllers
         public async Task<IActionResult> RegisterCliente(RegisterClienteRequest request)
         {
             var result = await _authRepository.RegisterClienteAsync(request);
+            if (result == null)
+                return BadRequest(new { message = "Email já registrado" });
+
+            return Ok(result);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("register-admin-empresa")]
+        public async Task<IActionResult> RegisterAdminEmpresa(RegisterRequest request)
+        {
+            var result = await _authRepository.RegisterAdminEmpresa(request);
             if (result == null)
                 return BadRequest(new { message = "Email já registrado" });
 
