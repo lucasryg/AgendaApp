@@ -1,9 +1,10 @@
 ﻿using Agenda.Data;
 using Agenda.Dto.Request.AuthRequest;
-using Agenda.Dto.Response;
+using Agenda.Dto.Response.AuthResponse;
 using Agenda.Interface.IAuthRepository;
 using Agenda.Models;
 using Agenda.Token;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Agenda.Repository
@@ -12,18 +13,20 @@ namespace Agenda.Repository
     {
         private readonly AgendaAppContext _context;
         private readonly TokenJwt _jwt;
+        private readonly Mapper _mapper;
 
 
-        public AuthRepository(AgendaAppContext context, TokenJwt jwt)
+        public AuthRepository(AgendaAppContext context, TokenJwt jwt, Mapper mapper)
         {
             _context = context;
             _jwt = jwt;
+            _mapper = mapper;
         }
 
         public async Task<AuthResponse> LoginAsync(LoginRequest request)
         {
-                var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(x => x.Email == request.Email);
+            var usuario = await _context.Usuarios
+            .FirstOrDefaultAsync(x => x.Email == request.Email);
 
             if (usuario == null || !PasswordHelper.VerifyPassword(request.Senha, usuario.SenhaHash))
                 return null;
@@ -51,7 +54,7 @@ namespace Agenda.Repository
             {
                 Email = request.Email,
                 SenhaHash = PasswordHelper.HashPassword(request.Senha),
-                Role= "AdminEmpresa",
+                Role = "AdminEmpresa",
                 EmpresaId = 1
             };
 
@@ -88,7 +91,7 @@ namespace Agenda.Repository
                 SenhaHash = PasswordHelper.HashPassword(request.Senha),
                 EmpresaId = 1,
                 Role = "Cliente"
-            }; 
+            };
 
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
@@ -133,7 +136,7 @@ namespace Agenda.Repository
                 ImgPerfil = request.ImgPerfil ?? "",
                 UsuarioId = usuario.UsuarioId
             };
-   
+
 
             _context.Profissionals.Add(profissional);
             await _context.SaveChangesAsync();

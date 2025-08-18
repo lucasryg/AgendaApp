@@ -1,4 +1,4 @@
-﻿namespace Agenda.Dto.Response
+﻿namespace Agenda.Dto.Response.AuthResponse
 {
     public class AuthResponse
     {

@@ -1,5 +1,5 @@
 ﻿using Agenda.Dto.Request.AuthRequest;
-using Agenda.Dto.Response;
+using Agenda.Dto.Response.AuthResponse;
 
 namespace Agenda.Interface.IAuthRepository
 {

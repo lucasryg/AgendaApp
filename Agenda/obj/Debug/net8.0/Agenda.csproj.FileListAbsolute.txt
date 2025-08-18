@@ -148,3 +148,4 @@ C:\Users\lucas\source\repos\Agenda\Agenda\bin\Debug\net8.0\Microsoft.AspNetCore.
 C:\Users\lucas\source\repos\Agenda\Agenda\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\lucas\source\repos\Agenda\Agenda\obj\Debug\net8.0\Agenda.sourcelink.json
 C:\Users\lucas\source\repos\Agenda\Agenda\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\lucas\source\repos\Agenda\Agenda\bin\Debug\net8.0\AutoMapper.dll
