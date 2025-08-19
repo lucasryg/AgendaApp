@@ -13,14 +13,12 @@ namespace Agenda.Repository
     {
         private readonly AgendaAppContext _context;
         private readonly TokenJwt _jwt;
-        private readonly Mapper _mapper;
 
-
-        public AuthRepository(AgendaAppContext context, TokenJwt jwt, Mapper mapper)
+        public AuthRepository(AgendaAppContext context, TokenJwt jwt)
         {
             _context = context;
             _jwt = jwt;
-            _mapper = mapper;
+
         }
 
         public async Task<AuthResponse> LoginAsync(LoginRequest request)

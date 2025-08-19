@@ -36,17 +36,17 @@ public class ClienteController : ControllerBase
         return Ok(map);
     }
 
-    //[HttpPost]
-    //public async Task<IActionResult> Create(ClienteCreateDto cliente)
-    //{
-    //    var map = _mapper.Map<Cliente>(cliente);
+    [HttpPost]
+    public async Task<IActionResult> Create(ClienteCreateDto cliente)
+    {
+        var map = _mapper.Map<Cliente>(cliente);
 
-    //    var created = await _service.AddAsync(map);
+        var created = await _service.AddAsync(map);
 
-    //    var response = _mapper.Map<ClienteDto>(created);
+        var response = _mapper.Map<ClienteDto>(created);
 
-    //    return CreatedAtAction(nameof(GetById), new { id = response.ClienteId}, response);
-    //}
+        return CreatedAtAction(nameof(GetById), new { id = response.ClienteId }, response);
+    }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, Cliente cliente)
