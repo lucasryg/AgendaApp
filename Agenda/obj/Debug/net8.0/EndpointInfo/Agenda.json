@@ -390,25 +390,35 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "Cliente"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteCreateDto"
+                "$ref": "#/components/schemas/ClienteUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteCreateDto"
+                "$ref": "#/components/schemas/ClienteUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteCreateDto"
+                "$ref": "#/components/schemas/ClienteUpdateDto"
               }
             }
           }
@@ -436,46 +446,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Cliente"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cliente"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cliente"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cliente"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -515,25 +485,35 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "Profissional"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Profissional"
+                "$ref": "#/components/schemas/ProfissionalUpdate"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Profissional"
+                "$ref": "#/components/schemas/ProfissionalUpdate"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Profissional"
+                "$ref": "#/components/schemas/ProfissionalUpdate"
               }
             }
           }
@@ -561,46 +541,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Profissional"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Profissional"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Profissional"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Profissional"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -773,17 +713,56 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Servico"
+                "$ref": "#/components/schemas/ServicoCreate"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Servico"
+                "$ref": "#/components/schemas/ServicoCreate"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Servico"
+                "$ref": "#/components/schemas/ServicoCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Servico"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServicoUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServicoUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServicoUpdate"
               }
             }
           }
@@ -811,46 +790,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Servico"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Servico"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Servico"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Servico"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1007,14 +946,14 @@
         },
         "additionalProperties": false
       },
-      "ClienteCreateDto": {
+      "ClienteUpdateDto": {
         "type": "object",
         "properties": {
-          "nome": {
-            "type": "string",
-            "nullable": true
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "telefone": {
+          "nome": {
             "type": "string",
             "nullable": true
           }
@@ -1149,6 +1088,20 @@
         },
         "additionalProperties": false
       },
+      "ProfissionalUpdate": {
+        "type": "object",
+        "properties": {
+          "profissionalId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Reagendamento": {
         "type": "object",
         "properties": {
@@ -1270,6 +1223,60 @@
           },
           "empresa": {
             "$ref": "#/components/schemas/Empresa"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServicoCreate": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "duracaoMinutos": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "valor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServicoUpdate": {
+        "type": "object",
+        "properties": {
+          "servicoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "duracaoMinutos": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "valor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false

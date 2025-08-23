@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Agenda.Controllers.AgendaController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendaController",
     "Method": "GetAll",
     "RelativePath": "api/Agenda",
     "HttpMethod": "GET",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendaController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendaController",
     "Method": "Create",
     "RelativePath": "api/Agenda",
     "HttpMethod": "POST",
@@ -19,14 +19,14 @@
     "Parameters": [
       {
         "Name": "agenda",
-        "Type": "Agenda.Models.Agendum",
+        "Type": "Agenda.Domain.Models.Agendum",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendaController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendaController",
     "Method": "GetById",
     "RelativePath": "api/Agenda/{id}",
     "HttpMethod": "GET",
@@ -42,7 +42,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendaController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendaController",
     "Method": "Update",
     "RelativePath": "api/Agenda/{id}",
     "HttpMethod": "PUT",
@@ -56,14 +56,14 @@
       },
       {
         "Name": "agenda",
-        "Type": "Agenda.Models.Agendum",
+        "Type": "Agenda.Domain.Models.Agendum",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendaController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendaController",
     "Method": "Delete",
     "RelativePath": "api/Agenda/{id}",
     "HttpMethod": "DELETE",
@@ -79,7 +79,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendamentoController",
     "Method": "GetAll",
     "RelativePath": "api/Agendamento",
     "HttpMethod": "GET",
@@ -89,7 +89,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendamentoController",
     "Method": "Create",
     "RelativePath": "api/Agendamento",
     "HttpMethod": "POST",
@@ -98,14 +98,14 @@
     "Parameters": [
       {
         "Name": "agendamento",
-        "Type": "Agenda.Models.Agendamento",
+        "Type": "Agenda.Domain.Models.Agendamento",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendamentoController",
     "Method": "GetById",
     "RelativePath": "api/Agendamento/{id}",
     "HttpMethod": "GET",
@@ -121,7 +121,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendamentoController",
     "Method": "Update",
     "RelativePath": "api/Agendamento/{id}",
     "HttpMethod": "PUT",
@@ -135,14 +135,14 @@
       },
       {
         "Name": "agendamento",
-        "Type": "Agenda.Models.Agendamento",
+        "Type": "Agenda.Domain.Models.Agendamento",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AgendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.AgendamentoController",
     "Method": "Delete",
     "RelativePath": "api/Agendamento/{id}",
     "HttpMethod": "DELETE",
@@ -158,7 +158,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AuthController",
+    "ContainingType": "Agenda.Presentation.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -167,14 +167,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Agenda.Dto.Request.AuthRequest.LoginRequest",
+        "Type": "Agenda.Application.Dto.Request.AuthRequest.LoginRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AuthController",
+    "ContainingType": "Agenda.Presentation.Controllers.AuthController",
     "Method": "RegisterAdminEmpresa",
     "RelativePath": "api/Auth/register-admin-empresa",
     "HttpMethod": "POST",
@@ -183,14 +183,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Agenda.Dto.Request.AuthRequest.RegisterRequest",
+        "Type": "Agenda.Application.Dto.Request.AuthRequest.RegisterRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AuthController",
+    "ContainingType": "Agenda.Presentation.Controllers.AuthController",
     "Method": "RegisterCliente",
     "RelativePath": "api/Auth/register-cliente",
     "HttpMethod": "POST",
@@ -199,14 +199,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Agenda.Dto.Request.AuthRequest.RegisterClienteRequest",
+        "Type": "Agenda.Application.Dto.Request.AuthRequest.RegisterClienteRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.AuthController",
+    "ContainingType": "Agenda.Presentation.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth/register-profissional",
     "HttpMethod": "POST",
@@ -215,7 +215,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Agenda.Dto.Request.AuthRequest.RegisterRequest",
+        "Type": "Agenda.Application.Dto.Request.AuthRequest.RegisterRequest",
         "IsRequired": true
       }
     ],
@@ -233,15 +233,20 @@
   },
   {
     "ContainingType": "ClienteController",
-    "Method": "Create",
+    "Method": "Update",
     "RelativePath": "api/Cliente",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "cliente",
-        "Type": "Agenda.Dto.ClienteCreateDto",
+        "Type": "Agenda.Application.Dto.ClienteUpdateDto",
         "IsRequired": true
       }
     ],
@@ -265,27 +270,6 @@
   },
   {
     "ContainingType": "ClienteController",
-    "Method": "Update",
-    "RelativePath": "api/Cliente/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "cliente",
-        "Type": "Agenda.Models.Cliente",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClienteController",
     "Method": "Delete",
     "RelativePath": "api/Cliente/{id}",
     "HttpMethod": "DELETE",
@@ -301,7 +285,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ProfissionalController",
+    "ContainingType": "Agenda.Presentation.Controllers.ProfissionalController",
     "Method": "GetAll",
     "RelativePath": "api/Profissional",
     "HttpMethod": "GET",
@@ -311,23 +295,28 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ProfissionalController",
-    "Method": "Create",
+    "ContainingType": "Agenda.Presentation.Controllers.ProfissionalController",
+    "Method": "Update",
     "RelativePath": "api/Profissional",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "profissional",
-        "Type": "Agenda.Models.Profissional",
+        "Type": "Agenda.Application.Dto.ProfissionalUpdate",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ProfissionalController",
+    "ContainingType": "Agenda.Presentation.Controllers.ProfissionalController",
     "Method": "GetById",
     "RelativePath": "api/Profissional/{id}",
     "HttpMethod": "GET",
@@ -343,28 +332,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ProfissionalController",
-    "Method": "Update",
-    "RelativePath": "api/Profissional/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "profissional",
-        "Type": "Agenda.Models.Profissional",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Agenda.Controllers.ProfissionalController",
+    "ContainingType": "Agenda.Presentation.Controllers.ProfissionalController",
     "Method": "Delete",
     "RelativePath": "api/Profissional/{id}",
     "HttpMethod": "DELETE",
@@ -380,7 +348,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ReagendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ReagendamentoController",
     "Method": "GetAll",
     "RelativePath": "api/Reagendamento",
     "HttpMethod": "GET",
@@ -390,7 +358,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ReagendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ReagendamentoController",
     "Method": "Create",
     "RelativePath": "api/Reagendamento",
     "HttpMethod": "POST",
@@ -399,14 +367,14 @@
     "Parameters": [
       {
         "Name": "reage",
-        "Type": "Agenda.Models.Reagendamento",
+        "Type": "Agenda.Domain.Models.Reagendamento",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ReagendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ReagendamentoController",
     "Method": "GetById",
     "RelativePath": "api/Reagendamento/{id}",
     "HttpMethod": "GET",
@@ -422,7 +390,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ReagendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ReagendamentoController",
     "Method": "Update",
     "RelativePath": "api/Reagendamento/{id}",
     "HttpMethod": "PUT",
@@ -436,14 +404,14 @@
       },
       {
         "Name": "reage",
-        "Type": "Agenda.Models.Reagendamento",
+        "Type": "Agenda.Domain.Models.Reagendamento",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ReagendamentoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ReagendamentoController",
     "Method": "Delete",
     "RelativePath": "api/Reagendamento/{id}",
     "HttpMethod": "DELETE",
@@ -459,7 +427,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ServicoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ServicoController",
     "Method": "GetAll",
     "RelativePath": "api/Servico",
     "HttpMethod": "GET",
@@ -469,7 +437,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ServicoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ServicoController",
     "Method": "Create",
     "RelativePath": "api/Servico",
     "HttpMethod": "POST",
@@ -478,14 +446,35 @@
     "Parameters": [
       {
         "Name": "servico",
-        "Type": "Agenda.Models.Servico",
+        "Type": "Agenda.Application.Dto.ServicoCreate",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ServicoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ServicoController",
+    "Method": "Update",
+    "RelativePath": "api/Servico",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "servico",
+        "Type": "Agenda.Application.Dto.ServicoUpdate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Agenda.Presentation.Controllers.ServicoController",
     "Method": "GetById",
     "RelativePath": "api/Servico/{id}",
     "HttpMethod": "GET",
@@ -501,28 +490,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Agenda.Controllers.ServicoController",
-    "Method": "Update",
-    "RelativePath": "api/Servico/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "servico",
-        "Type": "Agenda.Models.Servico",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Agenda.Controllers.ServicoController",
+    "ContainingType": "Agenda.Presentation.Controllers.ServicoController",
     "Method": "Delete",
     "RelativePath": "api/Servico/{id}",
     "HttpMethod": "DELETE",
